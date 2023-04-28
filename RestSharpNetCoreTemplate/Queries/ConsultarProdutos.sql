@@ -1,0 +1,1 @@
+﻿select * from produtos where idProduto = '{idProduto}'

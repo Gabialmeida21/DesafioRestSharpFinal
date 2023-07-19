@@ -5,13 +5,13 @@ using RestSharpNetCoreTemplate.Tests;
 
 namespace RestSharpNetCoreTemplate.Requests
 {
-    public class RegisterRequest : RequestBase
+    public class CreateTokenRequest : RequestBase
     {
 
-        public RegisterRequest()
+        public CreateTokenRequest()
         {
             _urlBase = JsonHelpers.GetParameterAppSettings("URL_REQRES");
-            _resource = "/api/register";
+            _resource = "/api/rest/users/me/token";
             _method = Method.Post;
             SetupRequest();
         }

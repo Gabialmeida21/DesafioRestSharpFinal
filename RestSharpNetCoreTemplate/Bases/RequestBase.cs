@@ -32,7 +32,7 @@ namespace RestSharpNetCoreTemplate.Bases
 
         public static RestResponse ExecuteRequest()
         {
-            _request.AddHeader("Autorization", RegisterSteps._token);
+            _request.AddHeader("Authorization", RegisterSteps._token);
             //Executar as Requisiçoes
             switch (_method)
             {

@@ -52,8 +52,8 @@ namespace RestSharpNetCoreTemplate.Helpers
                 node.Log(Status.Info, "<b>PARAMETERS: </b>\n" + RequestBase._request.Parameters.GetParametersFromRequest());
                 node.Log(Status.Info, "<b>STATUS CODE: </b>" + "\n<pre>" + (int)RequestBase._response.StatusCode + " - " +
                     RequestBase._response.StatusCode + "</pre>");
-                 node.Log(Status.Info, "<b>RESPONSE BODY: </b>" + RequestBase._response.GetPrettyResponse());
-                
+                node.Log(Status.Info, "<b>RESPONSE BODY: </b>" + RequestBase._response.GetPrettyResponse());
+
 
             }
 
@@ -95,7 +95,7 @@ namespace RestSharpNetCoreTemplate.Helpers
             string extentReportFolderName = extentReportFileName + GeneralHelpers.GetDateAsString("dd-MM-yyyy_HH-mm");
 
             _reportFolder = extentReportPath +
-                extentReportFolderName + "\\" ;
+                extentReportFolderName + "\\";
             return _reportFolder;
         }
 

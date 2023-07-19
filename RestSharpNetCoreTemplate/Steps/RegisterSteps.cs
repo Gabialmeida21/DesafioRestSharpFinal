@@ -8,7 +8,7 @@ namespace RestSharpNetCoreTemplate.Tests
 {
     public class RegisterSteps : RequestBase
     {
-        static RegisterRequest registerRequest;
+        static CreateTokenRequest registerRequest;
         public static string _authBaseUrl;
         public static string _authResource;
         public static Method _authMethod;
@@ -16,23 +16,23 @@ namespace RestSharpNetCoreTemplate.Tests
         public static RestResponse _authResponseBody;
         public static bool _authIsEnabled = false;
         public static string _token = "";
-        private static string GetToken()
-        {
-            registerRequest = new RegisterRequest();
-            registerRequest.SetJsonBody();
-            RestResponse response = registerRequest.Register();
-            return response.GetValueFromKey("token");
-        }
+        //private static string GetToken()
+        //{
+        //    registerRequest = new CreateTokenRequest();
+        //    registerRequest.SetJsonBody();
+        //    RestResponse response = registerRequest.Register();
+        //    return response.GetValueFromKey("token");
+        //}
 
         public static void SetTokenHeader()
         {
-            _authIsEnabled = true;
-            _token = GetToken();
+            _authIsEnabled = false;
+            _token = JsonHelpers.GetParameterAppSettings("TOKEN");
 
             _authBaseUrl = _urlBase;
             _authResource = _resource;
             _authMethod = _method;
-            _authJsonBody = _request.Parameters.GetParametersFromRequest();
+            //_authJsonBody = _request.Parameters.GetParametersFromRequest();
             _authResponseBody = _response;
         }
     }

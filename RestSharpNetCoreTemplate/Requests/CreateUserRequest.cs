@@ -11,11 +11,11 @@ namespace RestSharpNetCoreTemplate.Requests
 
         public CreateUserRequest()
         {
-            _urlBase = JsonHelpers.GetParameterAppSettings("URL_REQRES");
-            _resource = "/api/users";
-            _method = Method.Post;
+            _urlBase = JsonHelpers.GetParameterAppSettings("URL_REQRES"); //Chamando a url no appsenttings
+            _resource = "/api/users"; //endpoint
+            _method = Method.Post; //tipo do metodo 
             SetupRequest();
-            _request.AddHeader("Content-Type", "application/json");
+            _request.AddHeader("Content-Type", "application/json"); //
     
         }
 
